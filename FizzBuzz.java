@@ -3,7 +3,7 @@ public class FizzBuzz{
         int n;
         n = Integer.parseInt(args[0]);
         fizzBuzz(n);
-        recursive(n, 1);
+        recursive(n);
     }
 
     public static void fizzBuzz(int n) {
@@ -21,18 +21,18 @@ public class FizzBuzz{
         System.out.println();
     }
 
-    public static void recursive(int n, int counter) {
-        if(counter <= n) {
-            if (counter % 3 ==0 && counter % 5 ==0) {
+    public static void recursive(int n) {
+        if(n > 0) {
+            recursive(n -1);
+            if (n % 3 ==0 && n % 5 ==0) {
                 System.out.println("FizzBuzz");
-            } else if (counter % 5 == 0) {
+            } else if (n % 5 == 0) {
                 System.out.println("Buzz");
-            } else if (counter % 3 ==0 ) {
+            } else if (n % 3 ==0 ) {
                 System.out.println("Fizz");
             } else {
-                System.out.println(counter);
+                System.out.println(n);
             }
-            recursive(n, counter +1);
         } else {
             return;
         }
