@@ -1,6 +1,7 @@
 public class FizzBuzz{
     public static void main(String[] args) {
-        int n = 15;
+        int n;
+        n = Integer.parseInt(args[0]);
         fizzBuzz(n);
         recursive(n, 1);
     }
