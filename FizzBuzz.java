@@ -1,9 +1,13 @@
 public class FizzBuzz{
     public static void main(String[] args) {
-        int n;
-        n = Integer.parseInt(args[0]);
-        fizzBuzz(n);
-        recursive(n);
+        if(isNumberic(args[0])) {
+            int n;
+            n = Integer.parseInt(args[0]);
+            fizzBuzz(n);
+            recursive(n);
+        } else {
+            System.out.println("Wrong argument");
+        }
     }
 
     public static void fizzBuzz(int n) {
@@ -35,6 +39,15 @@ public class FizzBuzz{
             }
         } else {
             return;
+        }
+    }
+    
+    private static boolean isNumberic(String str) {
+        try {
+            Integer.parseInt(str);
+            return true;
+        } catch(NumberFormatException e) {
+            return false;
         }
     }
 }
